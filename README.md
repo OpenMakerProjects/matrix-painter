@@ -55,3 +55,9 @@ No dedicated schematic file is present. The wiring table above is preserved from
 ## Review status
 
 Source, provenance and licence were checked for publication. Generated binaries and vendored dependency trees were excluded. Hardware and iOS builds have not been independently reproduced by OpenMakerProjects.
+
+- Arduino compilation: **Passed** for Arduino Uno using Arduino CLI, Arduino AVR Boards 1.8.8, Adafruit GFX, Adafruit BusIO and Max72xxPanel.
+- Processing and iOS builds: **Not tested**.
+- Secret scan: **Passed**; no credentials or private identifiers were detected.
+- Binary and duplicate scan: **Passed**; no compiled files, installers, archives or duplicate files are included.
+- Network safety: the Processing application exposes an unauthenticated TCP server on port 5204. Run it only on a trusted network or restrict access with a host firewall.

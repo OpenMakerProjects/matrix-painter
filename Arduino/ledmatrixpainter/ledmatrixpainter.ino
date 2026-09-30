@@ -26,10 +26,9 @@ int bytesRecieved = 0;
 uint8_t bytes[2];
 
 void loop() {
-  if (Serial.available()) {
-    while (bytesRecieved < 2) {
-      bytes[bytesRecieved++] = Serial.read();
-    }
+  if (Serial.available() >= 2) {
+    bytes[0] = Serial.read();
+    bytes[1] = Serial.read();
 
     bytesRecieved = 0;
 

@@ -92,12 +92,20 @@ void draw() {
         if (trimmed.equals("clear")) {
           clearMatrix();
         } else if (!trimmed.equals("")) {
-          int index = Integer.parseInt(trimmed);
+          int index;
+          try {
+            index = Integer.parseInt(trimmed);
+          } catch (NumberFormatException error) {
+            continue;
+          }
           boolean add = false;
           int mod = index;
           if (index >= 1000) {
             add = true;
             mod -= 1000;
+          }
+          if (mod < 0 || mod >= matrix.length * matrix[0].length) {
+            continue;
           }
           int y = floor(mod / matrix[0].length);
           int x = mod % matrix[0].length;
